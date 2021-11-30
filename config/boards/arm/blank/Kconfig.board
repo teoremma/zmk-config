@@ -1,0 +1,6 @@
+# Copyright (c) 2021 teoremma
+# SPDX-License-Identifier: MIT
+
+config BOARD_BLANK
+	bool "blank"
+	depends on SOC_NRF52840_QIAA
