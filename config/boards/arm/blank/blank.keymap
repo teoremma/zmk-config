@@ -14,7 +14,7 @@
 
 		lock {
 			timeout-ms = <50>;
-			key-positions = <0 11>;
+			key-positions = <0 4 7 11>;
 			bindings = <&tog LCK_L>;
 		};
 
@@ -29,6 +29,56 @@
 			key-positions = <43 44>;
 			bindings = <&kp DEL>;
 		};
+
+		// home row one shot mods
+		left_shift {
+			timeout-ms = <50>;
+			key-positions = <39 15>;
+			bindings = <&sk LSHFT>;
+		};
+
+		left_ctrl {
+			timeout-ms = <50>;
+			key-positions = <39 14>;
+			bindings = <&sk LCTRL>;
+		};
+
+		left_alt {
+			timeout-ms = <50>;
+			key-positions = <39 13>;
+			bindings = <&sk LALT>;
+		};
+
+		left_gui {
+			timeout-ms = <50>;
+			key-positions = <39 12>;
+			bindings = <&sk LGUI>;
+		};
+
+		right_shift {
+			timeout-ms = <50>;
+			key-positions = <44 20>;
+			bindings = <&sk RSHFT>;
+		};
+
+		right_ctrl {
+			timeout-ms = <50>;
+			key-positions = <44 21>;
+			bindings = <&sk RCTRL>;
+		};
+
+		right_alt {
+			timeout-ms = <50>;
+			key-positions = <44 22>;
+			bindings = <&sk RALT>;
+		};
+
+		right_gui {
+			timeout-ms = <50>;
+			key-positions = <44 23>;
+			bindings = <&sk RGUI>;
+		};
+
 	};
 
 	keymap {
