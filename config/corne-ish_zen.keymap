@@ -5,7 +5,8 @@
 #define _DEF 0
 #define _NUM 1
 #define _NAV 2
-#define _LCK 3
+#define _BLT 3
+#define _LCK 4
 
 &lt { quick_tap_ms = <200>; };
 
@@ -13,6 +14,7 @@
         combos {
 		compatible = "zmk,combos";
 
+		// left mods
 		lsft_c {
 			timeout-ms = <50>;
 			key-positions = <37 16>;
@@ -37,6 +39,7 @@
 			bindings = <&kp LGUI>;
 		};
 
+		// right mods
 		rsft_c {
 			timeout-ms = <50>;
 			key-positions = <40 19>;
@@ -58,7 +61,14 @@
 		rgui_c {
 			timeout-ms = <50>;
 			key-positions = <40 22>;
-			bindings = <&kp LGUI>;
+			bindings = <&kp RGUI>;
+		};
+
+		// layers
+		blt_c {
+			timeout-ms = <50>;
+			key-positions = <40 7>;
+			bindings = <&mo _BLT>;
 		};
 
 		lock {
@@ -72,6 +82,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+			label = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |     |  Q  |  W  |  E  |  R  |  T  | . |  Y   |  U  |  I  |  O  |  P  |     |
 // |     |  A  |  S  |  D  |  F  |  G  | . |  H   |  J  |  K  |  L  |  ;  |     |
@@ -86,6 +97,7 @@
                 };
 
                 number_layer {
+			label = "NUM";
 // -----------------------------------------------------------------------------------------
 // |     | RST |  1  |  2  |  3  | CAPS | . |  $  |  @  |  (  |  )  |  !  |     |
 // |     | ESC |  4  |  5  |  6  |  0   | . |  ~  |  \  |  {  |  }  |  :  |     |
@@ -100,6 +112,7 @@
                 };
 
                 navigation_layer {
+			label = "NAV";
 // -----------------------------------------------------------------------------------------
 // |     |  "  |  [  |  ]  |  ^  |  _  | . | PREV | VDN  | VUP  | NEXT | MUTE |     |
 // |     |  '  |  *  |  +  |  =  |  -  | . |  <   |  v   |  ^   |  >   | PLAY |     |
@@ -113,7 +126,23 @@
                         >;
                 };
 
+                bluetooth_layer {
+			label = "BLT";
+// -----------------------------------------------------------------------------------------
+// |     |     | BT0 | BT1 | BT2 |     | . |     |     |     |     |     |     |
+// |     |     |     | PRV | NXT | CLR | . |     |     |     |     |     |     |
+// |     |     |     |     |     |     | . |     |     |     |     |     |     |
+//                   |     |     |     | . |     |     |     |
+                        bindings = <
+   &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+   &trans  &trans  &trans        &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans  &trans  &trans  &trans  &trans  &trans
+   &trans  &trans  &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                           &trans  &trans  &trans    &trans  &trans  &trans
+                        >;
+                };
+
                 lock_layer {
+			label = "LOCK";
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
