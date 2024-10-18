@@ -8,6 +8,13 @@
 #define _BLT 3
 #define _LCK 4
 
+/ {
+    chosen {
+        zmk,physical-layout = &foostan_corne_6col_layout;
+        // zmk,physical-layout = &foostan_corne_5col_layout;
+    };
+};
+
 &lt { quick_tap_ms = <200>; };
 
 / {
