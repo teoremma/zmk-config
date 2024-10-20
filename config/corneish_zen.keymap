@@ -15,7 +15,7 @@
     };
 };
 
-&lt { quick_tap_ms = <200>; };
+&lt { quick-tap-ms = <200>; };
 
 / {
     combos {
@@ -89,7 +89,7 @@
         compatible = "zmk,keymap";
 
             default_layer {
-				label = "QWERTY";
+				display-name = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |     |  Q  |  W  |  E  |  R  |  T  | . |  Y   |  U  |  I  |  O  |  P  |     |
 // |     |  A  |  S  |  D  |  F  |  G  | . |  H   |  J  |  K  |  L  |  ;  |     |
@@ -100,26 +100,26 @@
    &trans  &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI  &trans
    &trans  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans
              &trans  &kp TAB  &lt _NUM SPACE    &lt _NAV BSPC  &kp RET  &trans
-                        >;
-                };
+                >;
+            };
 
-                number_layer {
-			label = "NUM";
+            number_layer {
+				display-name = "NUM";
 // -----------------------------------------------------------------------------------------
 // |     | RST |  1  |  2  |  3  | CAPS | . |  $  |  @  |  (  |  )  |  !  |     |
 // |     | ESC |  4  |  5  |  6  |  0   | . |  ~  |  \  |  {  |  }  |  :  |     |
 // |     | DEL |  7  |  8  |  9  |      | . |     |  #  |  <  |  >  |  ?  |     |
 //                   |     |     |      | . |     |     |     |
-                        bindings = <
+                bindings = <
    &trans  &bootloader  &kp N1  &kp N2  &kp N3  &kp CAPS    &kp DLLR   &kp AT    &kp LPAR  &kp RPAR  &kp EXCL   &trans
    &trans  &kp ESC      &kp N4  &kp N5  &kp N6  &kp N0      &kp TILDE  &kp BSLH  &kp LBRC  &kp RBRC  &kp COLON  &trans
    &trans  &kp DEL      &kp N7  &kp N8  &kp N9  &trans      &trans     &kp HASH  &kp LT    &kp GT    &kp QMARK  &trans
                                   &trans  &trans  &trans    &trans  &trans  &trans
-                        >;
-                };
+                >;
+            };
 
-                navigation_layer {
-			label = "NAV";
+            navigation_layer {
+				display-name = "NAV";
 // -----------------------------------------------------------------------------------------
 // |     |  "  |  [  |  ]  |  ^  |  _  | . | PREV | VDN  | VUP  | NEXT | MUTE |     |
 // |     |  '  |  *  |  +  |  =  |  -  | . |  <   |  v   |  ^   |  >   | PLAY |     |
@@ -130,38 +130,38 @@
    &trans  &kp SQT    &kp STAR  &kp PLUS  &kp EQUAL  &kp MINUS    &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp C_PP    &trans
    &trans  &kp GRAVE  &kp AMPS  &kp PIPE  &kp PRCNT  &trans       &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &trans      &trans
                                         &trans  &trans  &trans    &trans  &trans  &trans
-                        >;
-                };
+                >;
+            };
 
-                bluetooth_layer {
-			label = "BLT";
+            bluetooth_layer {
+				display-name = "BLT";
 // -----------------------------------------------------------------------------------------
 // |     |     | BT0 | BT1 | BT2 |     | . |     |     |     |     |     |     |
 // |     |     |     | PRV | NXT | CLR | . |     |     |     |     |     |     |
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
 //                   |     |     |     | . |     |     |     |
-                        bindings = <
+                bindings = <
    &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans        &trans  &trans  &trans  &trans  &trans  &trans
    &trans  &trans  &trans        &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans  &trans  &trans  &trans  &trans  &trans
    &trans  &trans  &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &trans  &trans    &trans  &trans  &trans
-                        >;
-                };
+                >;
+            };
 
-                lock_layer {
-			label = "LOCK";
+            lock_layer {
+				display-name = "LOCK";
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
 // |     |     |     |     |     |     | . |     |     |     |     |     |     |
 //                   |     |     |     | . |     |     |     |
-                        bindings = <
+            	bindings = <
    &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
    &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
    &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                         &none  &none  &none    &none  &none  &none
-                        >;
-                };
+            	>;
+        	};
 
 //                 template_layer {
 // // -----------------------------------------------------------------------------------------
