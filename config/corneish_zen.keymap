@@ -32,19 +32,19 @@
 		lctl_c {
 			timeout-ms = <50>;
 			key-positions = <37 15>;
-			bindings = <&kp LCTRL>;
+			bindings = <&kp LGUI>;
 		};
 
 		lalt_c {
 			timeout-ms = <50>;
 			key-positions = <37 14>;
-			bindings = <&kp LALT>;
+			bindings = <&kp LCTRL>;
 		};
 
 		lgui_c {
 			timeout-ms = <50>;
 			key-positions = <37 13>;
-			bindings = <&kp LGUI>;
+			bindings = <&kp LALT>;
 		};
 
 		// right mods
@@ -57,19 +57,19 @@
 		rctl_c {
 			timeout-ms = <50>;
 			key-positions = <40 20>;
-			bindings = <&kp LCTRL>;
+			bindings = <&kp LGUI>;
 		};
 
 		ralt_c {
 			timeout-ms = <50>;
 			key-positions = <40 21>;
-			bindings = <&kp LALT>;
+			bindings = <&kp LCTRL>;
 		};
 
 		rgui_c {
 			timeout-ms = <50>;
 			key-positions = <40 22>;
-			bindings = <&kp RGUI>;
+			bindings = <&kp LALT>;
 		};
 
 		// layers
