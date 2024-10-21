@@ -16,7 +16,15 @@
     };
 };
 
-&lt { quick-tap-ms = <200>; };
+&lt { 
+	quick-tap-ms = <200>; 
+};
+
+&sk {
+	release-after-ms = <1000>;
+	// quick-release;
+	lazy;
+};
 
 / {
     combos {
@@ -26,50 +34,50 @@
 		lsft_c {
 			timeout-ms = <50>;
 			key-positions = <37 16>;
-			bindings = <&kp LSHFT>;
+			bindings = <&sk LSHFT>;
 		};
 
 		lctl_c {
 			timeout-ms = <50>;
 			key-positions = <37 15>;
-			bindings = <&kp LGUI>;
+			bindings = <&sk LGUI>;
 		};
 
 		lalt_c {
 			timeout-ms = <50>;
 			key-positions = <37 14>;
-			bindings = <&kp LCTRL>;
+			bindings = <&sk LCTRL>;
 		};
 
 		lgui_c {
 			timeout-ms = <50>;
 			key-positions = <37 13>;
-			bindings = <&kp LALT>;
+			bindings = <&sk LALT>;
 		};
 
 		// right mods
 		rsft_c {
 			timeout-ms = <50>;
 			key-positions = <40 19>;
-			bindings = <&kp LSHFT>;
+			bindings = <&sk LSHFT>;
 		};
 
 		rctl_c {
 			timeout-ms = <50>;
 			key-positions = <40 20>;
-			bindings = <&kp LGUI>;
+			bindings = <&sk LGUI>;
 		};
 
 		ralt_c {
 			timeout-ms = <50>;
 			key-positions = <40 21>;
-			bindings = <&kp LCTRL>;
+			bindings = <&sk LCTRL>;
 		};
 
 		rgui_c {
 			timeout-ms = <50>;
 			key-positions = <40 22>;
-			bindings = <&kp LALT>;
+			bindings = <&sk LALT>;
 		};
 
 		// layers
@@ -112,14 +120,14 @@
             number_layer {
 				display-name = "NUM";
 // -----------------------------------------------------------------------------------------
-// |     | RST |  1  |  2  |  3  | CAPS | . |  $  |  @  |  (  |  )  |  !  |     |
+// |     |     |  1  |  2  |  3  | CAPS | . |  $  |  @  |  (  |  )  |  !  |     |
 // |     | ESC |  4  |  5  |  6  |  0   | . |  ~  |  \  |  {  |  }  |  :  |     |
 // |     | DEL |  7  |  8  |  9  |      | . |     |  #  |  <  |  >  |  ?  |     |
 //                   |     |     |      | . |     |     |     |
                 bindings = <
-   &trans  &bootloader  &kp N1  &kp N2  &kp N3  &kp CAPS    &kp DLLR   &kp AT    &kp LPAR  &kp RPAR  &kp EXCL   &trans
-   &trans  &kp ESC      &kp N4  &kp N5  &kp N6  &kp N0      &kp TILDE  &kp BSLH  &kp LBRC  &kp RBRC  &kp COLON  &trans
-   &trans  &kp DEL      &kp N7  &kp N8  &kp N9  &trans      &trans     &kp HASH  &kp LT    &kp GT    &kp QMARK  &trans
+   &trans  &trans   &kp N1  &kp N2  &kp N3  &kp CAPS    &kp DLLR   &kp AT    &kp LPAR  &kp RPAR  &kp EXCL   &trans
+   &trans  &kp ESC  &kp N4  &kp N5  &kp N6  &kp N0      &kp TILDE  &kp BSLH  &kp LBRC  &kp RBRC  &kp COLON  &trans
+   &trans  &kp DEL  &kp N7  &kp N8  &kp N9  &trans      &trans     &kp HASH  &kp LT    &kp GT    &kp QMARK  &trans
                                   &trans  &trans  &trans    &trans  &trans  &trans
                 >;
             };
