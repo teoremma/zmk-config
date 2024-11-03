@@ -26,7 +26,26 @@
 	lazy;
 };
 
+
 / {
+	behaviors {
+		skl: sticky_key_lazy {
+			compatible = "zmk,behavior-sticky-key";
+			#binding-cells = <1>;
+			bindings = <&kp>;
+			release-after-ms = <1000>;
+			lazy;
+		};
+
+		hskl: hold_sticky_key_lazy {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&kp>, <&skl>;
+		};
+	};
+
     combos {
 		compatible = "zmk,combos";
 
@@ -35,28 +54,28 @@
 		combo_lt1_lhi {
 			timeout-ms = <50>;
 			key-positions = <37 16>;
-			bindings = <&sk LSHFT>;
+			bindings = <&hskl LSHFT LSHFT>;
 		};
 
 		// left thumb 1, left home middle
 		combo_lt1_lhm {
 			timeout-ms = <50>;
 			key-positions = <37 15>;
-			bindings = <&sk LGUI>;
+			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// left thumb 1, left home ring
 		combo_lt1_lhr {
 			timeout-ms = <50>;
 			key-positions = <37 14>;
-			bindings = <&sk LCTRL>;
+			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// left thumb 1, left home pinky
 		combo_lt1_lhp {
 			timeout-ms = <50>;
 			key-positions = <37 13>;
-			bindings = <&sk LALT>;
+			bindings = <&hskl LALT LALT>;
 		};
 
 		// // right mod combos
@@ -64,28 +83,28 @@
 		combo_rt1_rhi {
 			timeout-ms = <50>;
 			key-positions = <40 19>;
-			bindings = <&sk LSHFT>;
+			bindings = <&hskl LSHFT LSHFT>;
 		};
 
 		// right thumb 1, right home middle
 		combo_rt1_rhm {
 			timeout-ms = <50>;
 			key-positions = <40 20>;
-			bindings = <&sk LGUI>;
+			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// right thumb 1, right home ring
 		combo_rt1_rhr {
 			timeout-ms = <50>;
 			key-positions = <40 21>;
-			bindings = <&sk LCTRL>;
+			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// right thumb 1, right home pinky
 		combo_rt1_rhp {
 			timeout-ms = <50>;
 			key-positions = <40 22>;
-			bindings = <&sk LALT>;
+			bindings = <&hskl LALT LALT>;
 		};
 
 		// // layer combos
