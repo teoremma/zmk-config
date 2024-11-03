@@ -30,85 +30,102 @@
     combos {
 		compatible = "zmk,combos";
 
-		// left mods
-		lsft_c {
+		// // left mod combos
+		// left thumb 1, left home index
+		combo_lt1_lhi {
 			timeout-ms = <50>;
 			key-positions = <37 16>;
 			bindings = <&sk LSHFT>;
 		};
 
-		lctl_c {
+		// left thumb 1, left home middle
+		combo_lt1_lhm {
 			timeout-ms = <50>;
 			key-positions = <37 15>;
 			bindings = <&sk LGUI>;
 		};
 
-		lalt_c {
+		// left thumb 1, left home ring
+		combo_lt1_lhr {
 			timeout-ms = <50>;
 			key-positions = <37 14>;
 			bindings = <&sk LCTRL>;
 		};
 
-		lgui_c {
+		// left thumb 1, left home pinky
+		combo_lt1_lhp {
 			timeout-ms = <50>;
 			key-positions = <37 13>;
 			bindings = <&sk LALT>;
 		};
 
-		// right mods
-		rsft_c {
+		// // right mod combos
+		// right thumb 1, right home index
+		combo_rt1_rhi {
 			timeout-ms = <50>;
 			key-positions = <40 19>;
 			bindings = <&sk LSHFT>;
 		};
 
-		rctl_c {
+		// right thumb 1, right home middle
+		combo_rt1_rhm {
 			timeout-ms = <50>;
 			key-positions = <40 20>;
 			bindings = <&sk LGUI>;
 		};
 
-		ralt_c {
+		// right thumb 1, right home ring
+		combo_rt1_rhr {
 			timeout-ms = <50>;
 			key-positions = <40 21>;
 			bindings = <&sk LCTRL>;
 		};
 
-		rgui_c {
+		// right thumb 1, right home pinky
+		combo_rt1_rhp {
 			timeout-ms = <50>;
 			key-positions = <40 22>;
 			bindings = <&sk LALT>;
 		};
 
-		// layers
-		combo_fn {
+		// // layer combos
+		// left thumb 0, left thumb 0
+		combo_lt0_lt1 {
 			timeout-ms = <50>;
 			key-positions = <37 38>;
 			bindings = <&mo _FN>;
 		};
 
-		blt_c {
-			timeout-ms = <50>;
-			key-positions = <40 7>;
-			bindings = <&mo _BLT>;
-		};
+		// blt_c {
+		// 	timeout-ms = <50>;
+		// 	key-positions = <40 7>;
+		// 	bindings = <&mo _BLT>;
+		// };
 
 		lock {
 			timeout-ms = <50>;
-			key-positions = <36 41>;
+			key-positions = <37 1 40 10>;
 			bindings = <&tog _LCK>;
 		};
 	};
 
     keymap {
+//        O     P     R     M     I     N         N     I     M     R     P     O
+//      ___________________________________     ___________________________________  
+//  U  | k0  |     |     |     |     |     | . | k6  |     |     |     |     |     |
+//  H  | k12 |     |     |     |     |     | . | k18 |     |     |     |     |     |
+//  L  |_k24_|_____|_____|     |     |     | . | k30 |     |     |_____|_____|_____|
+//  T                    |_k36_|_____|_____| . |_k39_|_____|_____|
+//                          2     1     0         0     1     2
         compatible = "zmk,keymap";
 
             default_layer {
 				display-name = "QWERTY";
-// k0  |     |  Q  |  W  |  E  |  R  |  T  | . |  Y   |  U  |  I  |  O  |  P  |     |
-// k12 |     |  A  |  S  |  D  |  F  |  G  | . |  H   |  J  |  K  |  L  |  ;  |     |
-// k24 |     |  Z  |  X  |  C  |  V  |  B  | . |  N   |  M  |  ,  |  .  |  /  |     |
-// k36                   |     | TAB | SPC | . | BSPC | RET |     |
+//  ___________________________________     ____________________________________
+// |     |  Q  |  W  |  E  |  R  |  T  | . |  Y   |  U  |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  | . |  H   |  J  |  K  |  L  |  ;  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  | . |  N   |  M  |  ,  |  .  |  /  |     |
+//                   |     | TAB | SPC | . | BSPC | RET |     |
                 bindings = <
    	&trans  &kp Q  &kp W  &kp E  &kp R  &kp T /**/ &kp Y  &kp U  &kp I      &kp O    &kp P     &trans
    	&trans  &kp A  &kp S  &kp D  &kp F  &kp G /**/ &kp H  &kp J  &kp K      &kp L    &kp SEMI  &trans
@@ -197,8 +214,8 @@
 // //      ___________________________________     ___________________________________  
 // // k0  |     |     |     |     |     |     | . |     |     |     |     |     |     |
 // // k12 |     |     |     |     |     |     | . |     |     |     |     |     |     |
-// // k24 |     |     |     |     |     |     | . |     |     |     |     |     |     |
-// // k36                   |     |     |     | . |     |     |     |
+// // k24 |_____|_____|_____|     |     |     | . |     |     |     |_____|_____|_____|
+// // k36                   |_____|_____|_____| . |_____|_____|_____|
 //                 bindings = <
 //    &trans  &trans  &trans  &trans  &trans  &trans /**/ &trans  &trans  &trans  &trans  &trans  &trans
 //    &trans  &trans  &trans  &trans  &trans  &trans /**/ &trans  &trans  &trans  &trans  &trans  &trans
