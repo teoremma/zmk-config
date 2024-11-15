@@ -20,13 +20,6 @@
 	quick-tap-ms = <200>; 
 };
 
-&sk {
-	release-after-ms = <1000>;
-	// quick-release;
-	lazy;
-};
-
-
 / {
 	behaviors {
 		skl: sticky_key_lazy {
@@ -44,6 +37,16 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&skl>;
 		};
+
+		td_sf_cp: tap_dance_shift_caps {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			// TODO: behavior is not consistent, look into it
+			// we might need to change quick-tap-ms, flavor or tapping-term-ms 
+			// of the underlying hskl behavior. I'd bet on the first
+			tapping-term-ms = <300>;
+			bindings = <&hskl LSHFT LSHFT>, <&kp CAPS>;
+		};
 	};
 
     combos {
@@ -54,7 +57,7 @@
 		combo_lt1_lhi {
 			timeout-ms = <50>;
 			key-positions = <37 16>;
-			bindings = <&hskl LSHFT LSHFT>;
+			bindings = <&td_sf_cp>;
 		};
 
 		// left thumb 1, left home middle
@@ -83,7 +86,7 @@
 		combo_rt1_rhi {
 			timeout-ms = <50>;
 			key-positions = <40 19>;
-			bindings = <&hskl LSHFT LSHFT>;
+			bindings = <&td_sf_cp>;
 		};
 
 		// right thumb 1, right home middle
