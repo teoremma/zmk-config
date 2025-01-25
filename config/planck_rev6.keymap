@@ -8,6 +8,8 @@
 #define _BLT 4
 #define _LCK 5
 
+#define ___ &trans
+
 &lt { 
 	quick_tap_ms = <200>; 
 };
@@ -48,28 +50,28 @@
 		// left thumb 1, left home index
 		combo_lt1_lhi {
 			timeout-ms = <50>;
-			key-positions = <37 16>;
+			key-positions = <39 15>;
 			bindings = <&td_sf_cp>;
 		};
 
 		// left thumb 1, left home middle
 		combo_lt1_lhm {
 			timeout-ms = <50>;
-			key-positions = <37 15>;
+			key-positions = <39 14>;
 			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// left thumb 1, left home ring
 		combo_lt1_lhr {
 			timeout-ms = <50>;
-			key-positions = <37 14>;
+			key-positions = <39 13>;
 			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// left thumb 1, left home pinky
 		combo_lt1_lhp {
 			timeout-ms = <50>;
-			key-positions = <37 13>;
+			key-positions = <39 12>;
 			bindings = <&hskl LALT LALT>;
 		};
 
@@ -77,36 +79,36 @@
 		// right thumb 1, right home index
 		combo_rt1_rhi {
 			timeout-ms = <50>;
-			key-positions = <40 19>;
+			key-positions = <44 20>;
 			bindings = <&td_sf_cp>;
 		};
 
 		// right thumb 1, right home middle
 		combo_rt1_rhm {
 			timeout-ms = <50>;
-			key-positions = <40 20>;
+			key-positions = <44 21>;
 			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// right thumb 1, right home ring
 		combo_rt1_rhr {
 			timeout-ms = <50>;
-			key-positions = <40 21>;
+			key-positions = <44 22>;
 			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// right thumb 1, right home pinky
 		combo_rt1_rhp {
 			timeout-ms = <50>;
-			key-positions = <40 22>;
+			key-positions = <44 23>;
 			bindings = <&hskl LALT LALT>;
 		};
 
 		// // layer combos
-		// left thumb 0, left thumb 0
+		// left thumb 0, left thumb 1
 		combo_lt0_lt1 {
 			timeout-ms = <50>;
-			key-positions = <37 38>;
+			key-positions = <39 40>;
 			bindings = <&mo _FN>;
 		};
 
@@ -124,6 +126,13 @@
 	};
 
 	keymap {
+//        P     R     M     I     N             N     I     M     R     P
+//      ______________________________        ______________________________  
+//  U  | k0  |     |     |     |     | . | . | k7  |     |     |     |     |
+//  H  | k12 |     |     |     |     | . | . | k19 |     |     |     |     |
+//  L  |_k24_|_____|_____|     |     | . | . | k31 |     |_____|_____|_____|
+//  T     .     .     .  |_k39_|_____| . | . |_k43_|_____|  .     .     .
+//                          1     0             0     1
 		compatible = "zmk,keymap";
 
             default_layer {
@@ -134,10 +143,10 @@
 // |     |  Z  |  X  |  C  |  V  |  B  | . |  N   |  M  |  ,  |  .  |  /  |     |
 //                   |     | TAB | SPC | . | BSPC | RET |     |
                 bindings = <
-   	&kp Q  &kp W  &kp E  &kp R  &kp T &trans  /**/ &trans &kp Y  &kp U  &kp I      &kp O    &kp P     
-   	&kp A  &kp S  &kp D  &kp F  &kp G &trans  /**/ &trans &kp H  &kp J  &kp K      &kp L    &kp SEMI  
-   	&kp Z  &kp X  &kp C  &kp V  &kp B &trans  /**/ &trans &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  
-   	&trans  &trans  &trans  &kp TAB  &lt _NUM SPACE &trans /**/ &trans &lt _NAV BSPC  &kp RET  &trans  &trans  &trans
+   	&kp Q  &kp W  &kp E  &kp R    &kp T          ___  /**/ ___ &kp Y  &kp U  &kp I      &kp O    &kp P     
+   	&kp A  &kp S  &kp D  &kp F    &kp G          ___  /**/ ___ &kp H  &kp J  &kp K      &kp L    &kp SEMI  
+   	&kp Z  &kp X  &kp C  &kp V    &kp B          ___  /**/ ___ &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  
+   	___    ___    ___    &kp TAB  &lt _NUM SPACE ___  /**/ ___ &lt _NAV BSPC  &kp RET  ___  ___  ___
                 >;
             };
 		
@@ -149,7 +158,7 @@
 // |     | DEL |  7  |  8  |  9  |      | . |     |  #  |  <  |  >  |  ?  |     |
 //                   |     |     |      | . |     |     |     |
                 bindings = <
-   	&trans   &kp N2  &kp N2  &kp N3  &kp CAPS  &trans  &trans    &kp DLLR   &kp AT    &kp LPAR  &kp RPAR  &kp EXCL   
+   	&trans   &kp N1  &kp N2  &kp N3  &kp CAPS  &trans  &trans    &kp DLLR   &kp AT    &kp LPAR  &kp RPAR  &kp EXCL   
    	&kp ESC  &kp N4  &kp N5  &kp N6  &kp N0    &trans  &trans    &kp TILDE  &kp BSLH  &kp LBRC  &kp RBRC  &kp COLON  
    	&kp DEL  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans    &trans     &kp HASH  &kp LT    &kp GT    &kp QMARK  
    	&trans     &trans    &trans    &trans     &trans     &trans  &trans  &trans      &trans        &trans        &trans      &trans
