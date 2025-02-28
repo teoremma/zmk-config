@@ -16,6 +16,10 @@
 // This should be default honestly
 #define ___ &trans
 
+&lt {
+    quick_tap_ms = <200>; 
+};
+
 / {
 	behaviors {
 		skl: sticky_key_lazy {
