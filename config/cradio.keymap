@@ -52,28 +52,28 @@
 		// left thumb 1, left home index
 		combo_lt1_lhi {
 			timeout-ms = <50>;
-			key-positions = <39 15>;
+			key-positions = <30 13>;
 			bindings = <&td_sf_cp>;
 		};
 
 		// left thumb 1, left home middle
 		combo_lt1_lhm {
 			timeout-ms = <50>;
-			key-positions = <39 14>;
+			key-positions = <30 12>;
 			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// left thumb 1, left home ring
 		combo_lt1_lhr {
 			timeout-ms = <50>;
-			key-positions = <39 13>;
+			key-positions = <30 11>;
 			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// left thumb 1, left home pinky
 		combo_lt1_lhp {
 			timeout-ms = <50>;
-			key-positions = <39 12>;
+			key-positions = <30 10>;
 			bindings = <&hskl LALT LALT>;
 		};
 
@@ -81,28 +81,28 @@
 		// right thumb 1, right home index
 		combo_rt1_rhi {
 			timeout-ms = <50>;
-			key-positions = <44 20>;
+			key-positions = <33 16>;
 			bindings = <&td_sf_cp>;
 		};
 
 		// right thumb 1, right home middle
 		combo_rt1_rhm {
 			timeout-ms = <50>;
-			key-positions = <44 21>;
+			key-positions = <33 17>;
 			bindings = <&hskl LGUI LGUI>;
 		};
 
 		// right thumb 1, right home ring
 		combo_rt1_rhr {
 			timeout-ms = <50>;
-			key-positions = <44 22>;
+			key-positions = <33 18>;
 			bindings = <&hskl LCTRL LCTRL>;
 		};
 
 		// right thumb 1, right home pinky
 		combo_rt1_rhp {
 			timeout-ms = <50>;
-			key-positions = <44 23>;
+			key-positions = <33 19>;
 			bindings = <&hskl LALT LALT>;
 		};
 
@@ -110,21 +110,21 @@
 		// left thumb 0, left thumb 1
 		combo_lt0_lt1 {
 			timeout-ms = <50>;
-			key-positions = <39 40>;
+			key-positions = <30 31>;
 			bindings = <&mo _FN>;
 		};
 
-		// blt_c {
-		// 	timeout-ms = <50>;
-		// 	key-positions = <40 7>;
-		// 	bindings = <&mo _BLT>;
-		// };
-
-		lock {
+		combo_rt0_rt1 {
 			timeout-ms = <50>;
-			key-positions = <37 1 40 10>;
-			bindings = <&tog _LCK>;
+			key-positions = <32 33>;
+			bindings = <&mo _BLT>;
 		};
+
+		// lock {
+		// 	timeout-ms = <50>;
+		// 	key-positions = <37 1 40 10>;
+		// 	bindings = <&tog _LCK>;
+		// };
 	};
 
 
