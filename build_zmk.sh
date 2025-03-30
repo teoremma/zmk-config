@@ -10,7 +10,7 @@ container_id=$(echo $container_info | jq -r '.containerId')
 
 
 echo "Building ZMK firmware for $board"
-docker exec $container_id bash -c "ls /workspaces/zmk-config/config"
+docker exec $container_id bash -c "ls -R /workspaces/zmk-config/config"
 [[ -n $shield ]] && shield_flag="-DSHIELD=$shield" || shield_flag=""
 docker exec -w /workspaces/zmk/app $container_id bash -c "west build -p -b $board -- $shield_flag -DZMK_CONFIG=\"/workspaces/zmk-config/config\""
 [[ -n $shield ]] && filename="$board-$shield" || filename=$board
